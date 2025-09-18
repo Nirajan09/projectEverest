@@ -29,7 +29,7 @@ class RegisterView(generics.CreateAPIView):
             return Response({"status": "success", "data": RegisterSerializer(user).data})
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-class AccountView(APIView):
+class MeView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
